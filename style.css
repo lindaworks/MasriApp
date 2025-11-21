@@ -1,0 +1,104 @@
+:root {
+  --bg: #f5efe4;
+  --card-bg: #fff8f0;
+  --border: #d2bfa2;
+  --accent: #8b5e34;
+  --accent-dark: #5c3b1f;
+  --text: #2c241c;
+  --umlaut: #5a351d;
+  --de-blue: #1c5fb8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #fcf6ea, #efe2d0, #e1cfb8);
+  color: var(--text);
+}
+
+.header {
+  background: linear-gradient(90deg, #6f4829, #8b5e34);
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.statusbar {
+  text-align: center;
+  padding: 8px;
+  background: #fff8f0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.filebtn {
+  display: inline-flex;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.filebtn input[type="file"] { display: none; }
+
+.learn-card {
+  background: #fff;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.learn-ar {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.learn-az {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--umlaut);
+}
+
+.learn-de {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--de-blue);
+}
+
+.audio-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.audio-list {
+  list-style: none;
+  padding-left: 0;
+}

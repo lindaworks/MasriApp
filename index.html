@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masri mit Linda · Version B5.9</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="theme-color" content="#d7c7a3">
+
+    <style>
+        body {
+            background: #f3ecd9;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="app-header">
+    <h1>Masri mit Linda</h1>
+    <div class="subtitle">B5.9 · Offline · Text-Audio-Zuordnung</div>
+</header>
+
+<nav class="tabs">
+    <button class="tab-button active" data-tab="lernen">📚 Lernen</button>
+    <button class="tab-button" data-tab="audio">🎤 Audio+</button>
+    <button class="tab-button" data-tab="uebersicht">📋 Übersicht</button>
+    <button class="tab-button" data-tab="einstellungen">⚙️ Einstellungen</button>
+</nav>
+
+<main>
+
+<!-- TAB 1 – Lernen -->
+<section id="lernen" class="tab-content active">
+
+    <h2>Lernkarten</h2>
+
+    <div id="card-container" class="card-box">
+        <div id="card-ar" class="card-text-ar">–</div>
+        <div id="card-u" class="card-text-u">–</div>
+        <div id="card-de" class="card-text-de">–</div>
+
+        <audio id="card-audio" controls style="width:100%; margin-top:15px; display:none;"></audio>
+
+        <div class="buttons">
+            <button id="btn-prev">◀️ Zurück</button>
+            <button id="btn-know">✅ Ich kann das</button>
+            <button id="btn-repeat">🔁 Wiederholen</button>
+            <button id="btn-next">▶️ Weiter</button>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<!-- TAB 2 – Audio+ -->
+<section id="audio" class="tab-content">
+    <h2>Audio manuell testen</h2>
+
+    <p>Hier kannst du jede Audiodatei testen.</p>
+
+    <select id="audio-list" size="10" style="width:100%;"></select>
+
+    <audio id="audio-tester" controls style="width:100%; margin-top:20px;"></audio>
+</section>
+
+
+
+
+<!-- TAB 3 – Übersicht -->
+<section id="uebersicht" class="tab-content">
+    <h2>Zuordnung Übersicht</h2>
+    <div id="overview"></div>
+</section>
+
+
+
+
+<!-- TAB 4 – Einstellungen -->
+<section id="einstellungen" class="tab-content">
+
+    <h2>Einstellungen</h2>
+
+    <h3>1. Datenquellen (Cloudflare Proxy)</h3>
+
+    <label>Text-URL:</label>
+    <input id="cfg-url-text" type="text" style="width:100%;" placeholder="https://masriserver-proxy…/text">
+
+    <label>Audio-URL:</label>
+    <input id="cfg-url-audio" type="text" style="width:100%;" placeholder="https://masriserver-proxy…/audio">
+
+    <button id="cfg-save" style="margin-top:10px;">💾 Speichern</button>
+
+
+    <h3>2. Startsatz pro Lektion</h3>
+
+    <label>Lektion 1 Startsatz (Umlaut):</label>
+    <input id="cfg-l1" type="text" class="cfg-line">
+
+    <label>Lektion 2 Startsatz:</label>
+    <input id="cfg-l2" type="text" class="cfg-line">
+
+    <label>Lektion 3 Startsatz:</label>
+    <input id="cfg-l3" type="text" class="cfg-line">
+
+    <label>Lektion 4 Startsatz:</label>
+    <input id="cfg-l4" type="text" class="cfg-line">
+
+    <button id="cfg-save-lessons" style="margin-top:10px;">📘 Startpunkte speichern</button>
+
+
+    <h3>Backup-Upload</h3>
+    <p>Nur falls Cloud-Laden nicht funktioniert:</p>
+
+    <p><b>Text-ZIP hochladen</b></p>
+    <input type="file" id="backup-text" accept=".zip">
+
+    <p><b>Audio-ZIP hochladen</b></p>
+    <input type="file" id="backup-audio" accept=".zip">
+
+</section>
+
+</main>
+
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
