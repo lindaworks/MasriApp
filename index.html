@@ -127,14 +127,18 @@
 </section>
 
 </main>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="app.js"></script>
+
 <script>
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker registriert."))
+      .catch(err => console.error("SW Fehler:", err));
 }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
+  
 </body>
+
 </html>
